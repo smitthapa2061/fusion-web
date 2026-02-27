@@ -83,20 +83,51 @@ export default function Products() {
                     {[1, 2, 3].map((item) => (
                         <div key={item} className="group relative rounded-2xl overflow-hidden bg-[#0d0d0d] border border-white/5 hover:border-purple-500/30 transition-all duration-300">
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-linear-to-br from-transparent to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                            <div className="p-8 h-full flex flex-col items-center justify-center text-center space-y-6 min-h-[300px]">
-                                <div className="w-20 h-20 rounded-2xl bg-[#151515] border border-dashed border-white/20 flex items-center justify-center group-hover:border-yellow-400/50 group-hover:bg-yellow-400/10 transition-all duration-500">
-                                    <Clock className="w-10 h-10 text-gray-600 group-hover:text-yellow-400 transition-colors" />
-                                </div>
+                            <div className="p-8 h-full flex flex-col items-center justify-center text-center space-y-6 min-h-75">
+                                {item === 2 ? (
+                                    <>
+                                        <div className="relative w-20 h-20 transition-transform duration-500 group-hover:scale-110">
+                                            <Image
+                                                src="/Layer 2.png"
+                                                alt="Finance Tracker Pro Logo"
+                                                fill
+                                                className="object-contain"
+                                            />
+                                        </div>
 
-                                <div className="space-y-2">
-                                    <div className="text-xs font-bold text-purple-500 uppercase tracking-widest">In Development</div>
-                                    <h5 className="text-2xl font-black text-white/50 group-hover:text-white transition-colors">COMING SOON</h5>
-                                    <p className="text-sm text-gray-500 max-w-[200px] mx-auto">
-                                        Innovative esports solution currently under construction.
-                                    </p>
-                                </div>
+                                        <div className="space-y-2">
+                                            <div className="text-xs font-bold text-yellow-400 uppercase tracking-widest">Now Available</div>
+                                            <h5 className="text-2xl font-black text-white group-hover:text-white transition-colors">FINANCE TRACKER PRO</h5>
+                                            <p className="text-sm text-gray-400 max-w-[250px] mx-auto">
+                                                A comprehensive platform for tracking team bookings, managing entry fees, winnings, and analyzing your financial performance all in one place.
+                                            </p>
+                                            <a
+                                                href="https://financetrackerpro.vercel.app/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-bold uppercase tracking-wider hover:bg-yellow-300 transition-all hover:scale-105 mt-4"
+                                            >
+                                                Launch App <ExternalLink size={16} />
+                                            </a>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="w-20 h-20 rounded-2xl bg-[#151515] border border-dashed border-white/20 flex items-center justify-center group-hover:border-yellow-400/50 group-hover:bg-yellow-400/10 transition-all duration-500">
+                                            <Clock className="w-10 h-10 text-gray-600 group-hover:text-yellow-400 transition-colors" />
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <div className="text-xs font-bold text-purple-500 uppercase tracking-widest">In Development</div>
+                                            <h5 className="text-2xl font-black text-white/50 group-hover:text-white transition-colors">COMING SOON</h5>
+                                            <p className="text-sm text-gray-500 max-w-[200px] mx-auto">
+                                                Innovative esports solution currently under construction.
+                                            </p>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     ))}
